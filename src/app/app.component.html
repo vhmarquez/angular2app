@@ -21,7 +21,7 @@
                     
                     <!-- Block with book properties -->
                     <div class="block book">
-                        <span class="book-price">${{book.price}}</span>
+                        <span class="book-price">{{book.price | currency: 'USD':true}}</span>
 
                         <!-- Flag Object -->
                         <div class="flag">

@@ -85,6 +85,30 @@ GULP.task('sass-prod', function() {
 		.pipe(GULP.dest(PRODUCTION + '/css'));
 });
 
+GULP.task('sass-dev-app', function() {
+	GULP.src([PREPROCESSED + '/sass/**/*.sass', '!' + PREPROCESSED + '/sass/app.sass'])
+		.pipe(SASS.sync().on('error', SASS.logError))
+		.pipe(PREFIXCSS())
+		.pipe(GULP.dest(PROCESSED + '/css'))
+		.pipe(GULP.dest(DEVELOPMENT + '/css'));
+
+	GULP.src(PREPROCESSED + '/css/**/*.css')
+		.pipe(GULP.dest(DEVELOPMENT + '/css'))
+		.pipe(GULP.dest(PRODUCTION + '/css'));
+});
+
+GULP.task('sass-dev-app-main', function() {
+	GULP.src(PREPROCESSED + '/sass/app.sass')
+		.pipe(SASS.sync().on('error', SASS.logError))
+		.pipe(PREFIXCSS())
+		.pipe(GULP.dest(PROCESSED + '/css'))
+		.pipe(GULP.dest(DEVELOPMENT + '/css'));
+
+	GULP.src(PREPROCESSED + '/css/**/*.css')
+		.pipe(GULP.dest(DEVELOPMENT + '/css'))
+		.pipe(GULP.dest(PRODUCTION + '/css'));
+});
+
 GULP.task('sass-app', function() {
 	GULP.src([PREPROCESSED + '/sass/**/*.sass', '!' + PREPROCESSED + '/sass/app.sass'])
 		.pipe(SASS.sync().on('error', SASS.logError))
