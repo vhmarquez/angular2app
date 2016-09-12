@@ -6,7 +6,8 @@
     display: block
     position: absolute
     right: $bsu
-    top: $bsu
+    top: -4px
+    margin-bottom: 0!important
 
 .cart
     z-index: 2
@@ -21,6 +22,14 @@
 
     background: #fff
 
+    box-shadow: -3px 0 30px rgba(0,0,0, .3)
+
+    transform: translate3d(350px,0,0)
+    transition: transform .26s ease-in-out
+
+    &.active
+        transform: translate3d(0,0,0)
+
     +mq(lap-ver)
         padding-top: 81px
 
@@ -30,6 +39,15 @@
     padding: $hsu
     font-size: 14px
     border-bottom: 1px solid $grey-light
+
+    cursor: pointer
+
+    &:hover
+        background: $red
+        color: #fff
+        
+        .cart-item--title
+            color: #fff
 
     +mq(lap-ver)
         padding: $hsu $bsu

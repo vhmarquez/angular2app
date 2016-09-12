@@ -10,6 +10,21 @@
     h3
         margin-bottom: $hsu !important
 
+    &:hover
+        .book-image:after
+            content: '+'
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            min-height: 100%
+            color: #fff
+            font-size: 106px
+            text-align: center
+            background: rgba($tertiary, .5)
+
 .book-price
     display: block
     position: absolute

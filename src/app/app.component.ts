@@ -28,22 +28,33 @@ export class AppComponent {
     this.bookService.getBooks().then(books => this.books = books);
   }
 
-  ngOnInit(): void {
-    this.getBooks();
+  // Timeout
+  getBooksTimeOut(): void {
+    this.bookService.getBooks().then(books => this.books = books);
   }
 
+  ngOnInit(): void {
+    this.getBooksTimeOut();
+  }
+
+  isCartActive: boolean = false;
   cart = CART;
   total: number = 0;
 
-  selectBook(book: Cart): void {
-
+  addToCart(book: Cart): void {
       this.total += book.price;
 
       this.cart.push({
          title: book.title,
          price: book.price
       })
+  }
 
+  removeFromCart(book: Cart): void {
+    this.total -= book.price;
+
+    let index = this.cart.indexOf(book);
+    this.cart.splice(index, 1)
   }
 
 }

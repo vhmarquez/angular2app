@@ -2,12 +2,6 @@
 // APP HEADER
 // =========================
 
-.main
-    margin-top: 57px
-
-    +mq(lap-ver)
-        margin-top: 105px
-
 .app-header
     z-index: 3
     display: block
@@ -18,6 +12,8 @@
     padding: $hsu
 
     background: $primary
+    border-bottom: 2px solid $primary-accent
+    box-shadow: 0 3px 30px rgba(0,0,0, .5)
 
     &:after
         content: ''
@@ -30,6 +26,8 @@
         padding: $bsu 0
 
 .logo
+    display: inline
+    position: relative
     font-size: 24px
     color: #fff !important
     margin-bottom: 0

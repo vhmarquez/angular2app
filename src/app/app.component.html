@@ -2,7 +2,7 @@
 <header id="app-header" class="app-header">
     <div class="container">
         <h1 id="logo" class="logo">{{title}}</h1>
-        <span class="cart-toggle">My Cart</span>
+        <button class="cart-toggle btn btn-default" (click)="isCartActive = !isCartActive;">My Cart</button>
     </div>
 </header>
 
@@ -17,7 +17,7 @@
                     <h2>Browse Books</h2>
                 </div>
 
-                <div class="grid-item ver-one-half lap-one-third" *ngFor="let book of books" (click)="selectBook(book)">
+                <div class="grid-item ver-one-half lap-one-third" *ngFor="let book of books" (click)="addToCart(book)">
                     
                     <!-- Block with book properties -->
                     <div class="block book">
@@ -44,11 +44,11 @@
         </div>
     </section>
     
-    <section class="cart" id="cart">
+    <section class="cart" [class.active]="isCartActive" id="cart">
         <header class="cart-header" id="cartHeader">
             My Cart
         </header>
-        <div *ngFor="let item of cart" class="cart-item">
+        <div *ngFor="let item of cart" class="cart-item" (click)="removeFromCart(item)">
             <span class="cart-item--title">{{item.title}}</span>
             <span class="cart-item--price">{{item.price | currency: 'USD':true}}</span>
         </div>
