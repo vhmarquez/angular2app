@@ -1,0 +1,107 @@
+///////////////////////////////////////////////
+// TYPOGRAPHY
+// =========================
+
+// Typography styling
+
+// font families
+////////////////////////////////////////////////
+
+=open-sans
+	font-family: "Open Sans", Arial, Helvetica, sans-serif
+
+// headings
+////////////////////////////////////////////////
+
+p,
+li,
+span,
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	margin-top: 0
+	margin-bottom: $hsu
+
+	+mq(lap-ver)
+		margin-bottom: $bsu
+
+h1
+	font-size: $h1-size
+	color: $secondary
+
+h2
+	font-size: $h2-size
+
+h3
+	font-size: $h3-size
+
+h4
+	font-size: $h4-size
+
+p
+	font-size: $base-font-size
+	line-height: $base-line-height
+	margin-bottom: $hsu
+
+	+mq(lap-ver)
+		margin-bottom: $bsu
+
+// anchors
+////////////////////////////////////////////////
+
+a
+	color: $tertiary
+	transition: color .26s ease-in-out
+
+	&:hover
+		color: $tertiary-accent
+
+// listings
+////////////////////////////////////////////////
+
+ul
+	margin-bottom: 0
+
+ul,
+li
+	font-size: $base-font-size
+	line-height: $base-line-height
+	color: $grey
+	text-align: left
+
+// text align
+////////////////////////////////////////////////
+
+.left
+	text-align: left
+
+.center
+	text-align: center
+
+.right
+	text-align: right
+
+// font weight
+////////////////////////////////////////////////
+
+.light
+	font-weight: 100
+
+.normal
+	font-weight: 400
+
+.bold
+	font-weight: 700

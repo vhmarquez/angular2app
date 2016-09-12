@@ -1,0 +1,82 @@
+///////////////////////////////////////////////
+// CART
+// =========================
+
+.cart-toggle
+    display: block
+    position: absolute
+    right: $bsu
+    top: $bsu
+
+.cart
+    z-index: 2
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    width: 350px
+    height: 100%
+    min-height: 100%
+    padding-top: 57px
+    padding-bottom: 
+
+    background: #fff
+
+    +mq(lap-ver)
+        padding-top: 81px
+
+.cart-item
+    display: block
+    position: relative
+    padding: $hsu
+    font-size: 14px
+    border-bottom: 1px solid $grey-light
+
+    +mq(lap-ver)
+        padding: $hsu $bsu
+
+.cart-item--title
+    display: block
+    position: relative
+    color: $primary
+
+.cart-item--price
+    display: block
+    position: absolute
+    right: $hsu
+    top: $hsu
+    font-weight: $weight-bold
+
+    +mq(lap-ver)
+        right: $bsu
+
+.cart-header
+    display: block
+    position: relative
+    padding: $bsu
+    background: $secondary
+    color: #fff
+    text-align: center
+    text-transform: uppercase
+    font-size: 14px
+
+.cart-footer
+    display: block
+    position: absolute
+    bottom: 0
+    left: 0
+    padding: $hsu
+    width: 100%
+
+    border-top: 1px solid $grey
+    background: $grey-light
+
+    +mq(lap-ver)
+        padding: $hsu $bsu
+
+.total
+    display: block
+    position: absolute
+    top: $hsu
+    right: $bsu
+    font-weight: $weight-bold

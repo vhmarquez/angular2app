@@ -1,0 +1,40 @@
+///////////////////////////////////////////////
+// BUTTONS
+// =========================
+
+// Button styling
+
+.btn
+	display: inline
+	position: relative
+	margin-bottom: $bsu
+	padding: $hsu $bsu
+	border-radius: 30px
+
+	font-size: 12px
+	font-weight: 400
+	text-transform: uppercase
+	text-decoration: none
+
+	cursor: pointer
+
+	transition: all .3s ease-in-out
+
+	&.btn-default
+		background: $tertiary
+		color: #fff
+
+		&:hover
+			background: $tertiary-accent
+
+	&.btn-primary
+		background: $primary
+
+		&:hover
+			background: $primary-accent
+
+	&.btn-secondary
+		background: $secondary
+
+		&:hover
+			background: $secondary-accent
