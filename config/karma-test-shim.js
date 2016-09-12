@@ -32,7 +32,7 @@ System.config({
 System.import('system-config.js').then(function() {
   // Load and configure the TestComponentBuilder.
   return Promise.all([
-    System.import('@angular/core/testing'),
+    //System.import('@angular/core/testing'),
     System.import('@angular/platform-browser-dynamic/testing')
   ]).then(function (providers) {
     var testing = providers[0];

@@ -10,8 +10,6 @@ export class Cart {
 
 const CART: Cart[] = [];
 
-console.log(CART);
-
 @Component({
   moduleId: module.id,
   selector: 'app',
@@ -37,7 +35,7 @@ export class AppComponent {
   cart = CART;
   total: number = 0;
 
-  onSelect(book: Cart): void {
+  selectBook(book: Cart): void {
 
       this.total += book.price;
 
@@ -47,4 +45,5 @@ export class AppComponent {
       })
 
   }
+
 }

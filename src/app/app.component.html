@@ -2,7 +2,7 @@
 <header id="app-header" class="app-header">
     <div class="container">
         <h1 id="logo" class="logo">{{title}}</h1>
-
+        <span class="cart-toggle">My Cart</span>
     </div>
 </header>
 
@@ -17,7 +17,7 @@
                     <h2>Browse Books</h2>
                 </div>
 
-                <div class="grid-item ver-one-half lap-one-third" *ngFor="let book of books" (click)="onSelect(book)">
+                <div class="grid-item ver-one-half lap-one-third" *ngFor="let book of books" (click)="selectBook(book)">
                     
                     <!-- Block with book properties -->
                     <div class="block book">
