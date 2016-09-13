@@ -1,0 +1,60 @@
+<!-- Header Region -->
+<header id="app-header" class="app-header">
+    <div class="container">
+        <h1 id="logo" class="logo">{{title}}</h1>
+        <button class="cart-toggle btn btn-default" (click)="isCartActive = !isCartActive;">My Cart</button>
+    </div>
+</header>
+
+<!-- Main Region -->
+<main id="main" class="main">
+
+    <section class="books">
+        <div class="container">
+            <div class="grid">
+
+                <div class="grid-item">
+                    <h2>Browse Books</h2>
+                </div>
+
+                <div class="grid-item ver-one-half lap-one-third" *ngFor="let book of books" (click)="addToCart(book)">
+                    
+                    <!-- Block with book properties -->
+                    <div class="block book">
+                        <span class="book-price">{{book.price | currency: 'USD':true}}</span>
+
+                        <!-- Flag Object -->
+                        <div class="flag">
+                            <!-- Media -->
+                            <div class="flag-media">
+                                <div class="book-image"></div>
+                            </div>
+                            <!-- Content -->
+                            <div class="flag-content padded">
+                                <h4 class="book-title">{{book.title}}</h4>
+                                <span class="book-author">{{book.author}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section class="cart" [class.active]="isCartActive" id="cart">
+        <header class="cart-header" id="cartHeader">
+            My Cart
+        </header>
+        <div *ngFor="let item of cart" class="cart-item" (click)="removeFromCart(item)">
+            <span class="cart-item--title">{{item.title}}</span>
+            <span class="cart-item--price">{{item.price | currency: 'USD':true}}</span>
+        </div>
+        <footer class="cart-footer" id="cartFooter">
+            Total: <span class="total">{{total | currency: 'USD':true}}</span>
+        </footer>
+    </section>
+
+</main>
